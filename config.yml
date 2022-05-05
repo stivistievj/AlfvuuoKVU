@@ -42,8 +42,6 @@ jobs:
     steps:
       - checkout
       - restore_cache: *restore-yarn-cache
-      - restore_cache: *restore-node-modules-cache
-      - run: yarn install --non-interactive --cache-folder ~/.cache/yarn
       - run:
           name: Check if yarn.lock changed during install
           command: git diff --exit-code
